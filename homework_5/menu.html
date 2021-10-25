@@ -5,12 +5,9 @@
     <meta charset="utf-8">
     <title>Menu </title>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-    <script src="jqRotate.js"></script> -->
     <link rel="stylesheet" href="style.css">
 
-    <script src="script.js"></script>
+    
     <!-- <script type = "text/javascript" src="script.js"></script>   -->
 </head>
 
@@ -21,22 +18,24 @@
             <ul class="nav-links">
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="track_order.html">Track Orders</a></li>
-                <li><a href="purchase.html"> <img class="basket" src="source/basket.png" alt="basket icon"></a></li>
+                <li><a href="cart.html"> <img class="basket" src="source/basket.png" alt="basket icon"></a></li>
+                <span id="result"> </span>
             </ul>
         </nav>
     </header>
 
     <div>
-        <button
-            class="drop-down2">All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+        <div class="menu-container-top">
+            <button class="drop-down2">All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+        </div>
         <div class="menu-container">
             <hr class="line3">
-            <button class="collapsible">
+            <button class="collapsible" onclick = expandDown(this)>
                 <span class="menu-item">
                     <img class="bun" src="source/bun2.png" alt="original bun">
                     <span class="info">
                         <br><br><span class="heading4">original</span><br><br>
-                        <span>$3.00</span>
+                        <span class="item-price">$3.00</span>
                         <br><br>
                         <span class="menu-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor nim ad minim veniam, quis nostrud exercitation ullamco laboris incididunt ut
@@ -50,41 +49,51 @@
                     <div class="quantity">
                         <span>Quantity</span><br>
                         <!-- <hr class="line4"> -->
-                        <div class="bun-layout">
-                            <label class="container"><span>1</span>
-                                <input type="radio" checked="checked" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container"><span>3</span>
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container"><span>6</span>
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container"><span class="format-12">12</span>
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
+                        <!-- <div class="bun-layout"> -->
+                            <form id="mainForm" name="mainForm" class="bun-layout">
+                                <label class="container"><span>1</span>
+                                    <input type="radio" checked="checked" name="radio" id="g1" value="1">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container"><span>3</span>
+                                    <input type="radio" name="radio" id="g2" value="3">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container"><span>6</span>
+                                    <input type="radio" name="radio" id="g3" value="6">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container"><span class="format-12">12</span>
+                                    <input type="radio" name="radio" id="g4" value="12">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </form>
+
+                        <!-- </div> -->
                     </div>
                     <div class="glazing">
                         <span>Glaze Options</span><br>
-                        <!-- <hr class="line4"> -->
-                        <button
-                            class="drop-down">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+                        <div class="custom-select" style="width:150px;">
+                            <form action="cart.html">
+                                <select id="mytext">
+                                <option value="0">None</option>
+                                <option value="1">Sugar Milk</option>
+                                <option value="2">Vanilla</option>
+                                <option value="3">Chocolate</option>
+                                </select>
+                            </form>
+                          </div>
                     </div>
-                    <a href="#" class="button1">Add to Basket</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="button1" id="button-basket">Add to Basket</a>
                 </div>
             </div>
             <hr class="line3">
-            <button class="collapsible">
+            <button class="collapsible" onclick = "expandDown(this)">
                 <span class="menu-item">
                     <img class="bun" src="source/bun3.png" alt="walnut bun">
                     <span class="info">
                         <br><br><span class="heading4">walnut</span><br><br>
-                        <span>$3.50</span>
+                        <span class="item-price">$3.50</span>
                         <br><br>
                         <span class="menu-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor nim ad minim veniam, quis nostrud exercitation ullamco laboris incididunt ut
@@ -119,20 +128,25 @@
                     </div>
                     <div class="glazing">
                         <span>Glaze Options</span><br>
-                        <!-- <hr class="line4"> -->
-                        <button
-                            class="drop-down">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+                        <div class="custom-select" style="width:150px;">
+                            <select>
+                              <option value="0">None</option>
+                              <option value="1">Sugar Milk</option>
+                              <option value="2">Vanilla</option>
+                              <option value="3">Chocolate</option>
+                            </select>
+                          </div>
                     </div>
-                    <a href="#" class="button1">Add to Basket</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="button1 button-basket">Add to Basket</a>
                 </div>
             </div>
             <hr class="line3">
-            <button class="collapsible">
+            <button class="collapsible" onclick = "expandDown(this)">
                 <span class="menu-item">
                     <img class="bun" src="source/bun2.png" alt="blackberry bun">
                     <span class="info">
                         <br><br><span class="heading4">blackberry</span><br><br>
-                        <span>$3.50</span>
+                        <span class="item-price">$3.50</span>
                         <br><br>
                         <span class="menu-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor nim ad minim veniam, quis nostrud exercitation ullamco laboris incididunt ut
@@ -167,19 +181,24 @@
                     </div>
                     <div class="glazing">
                         <span>Glaze Options</span><br>
-                        <!-- <hr class="line4"> -->
-                        <button
-                            class="drop-down">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+                        <div class="custom-select" style="width:150px;">
+                            <select>
+                              <option value="0">None</option>
+                              <option value="1">Sugar Milk</option>
+                              <option value="2">Vanilla</option>
+                              <option value="3">Chocolate</option>
+                            </select>
+                          </div>
                     </div>
-                    <a href="#" class="button1">Add to Basket</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="button1 button-basket">Add to Basket</a>
                 </div>
             </div>
-            <hr class="line3"><button class="collapsible">
+            <hr class="line3"><button class="collapsible" onclick = "expandDown(this)">
                 <span class="menu-item">
-                    <img class="bun" src="source/bun3.png" alt="original gluten free bun">
+                    <img class="bun" src="source/bun3.png" alt="gluten free bun">
                     <span class="info">
                         <br><br><span class="heading4">original (gluten free)</span><br><br>
-                        <span>$3.00</span>
+                        <span class="item-price">$3.00</span>
                         <br><br>
                         <span class="menu-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor nim ad minim veniam, quis nostrud exercitation ullamco laboris incididunt ut
@@ -193,7 +212,7 @@
                     <div class="quantity">
                         <span>Quantity</span><br>
                         <!-- <hr class="line4"> -->
-                        <div class="bun-layout">
+                        <div class="bun-layout" id="glaze">
                             <label class="container"><span>1</span>
                                 <input type="radio" checked="checked" name="radio">
                                 <span class="checkmark"></span>
@@ -214,20 +233,27 @@
                     </div>
                     <div class="glazing">
                         <span>Glaze Options</span><br>
-                        <!-- <hr class="line4"> -->
-                        <button
-                            class="drop-down">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+                        <div class="custom-select" style="width:150px;">
+                            <form action="cart.html">
+                                <select id="mytext">
+                                <option value="0">None</option>
+                                <option value="1">Sugar Milk</option>
+                                <option value="2">Vanilla</option>
+                                <option value="3">Chocolate</option>
+                                </select>
+                            </form>
+                          </div>
                     </div>
-                    <a href="#" class="button1">Add to Basket</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="button1" id="button-basket">Add to Basket</a>
                 </div>
             </div>
             <hr class="line3">
-            <button class="collapsible">
+            <button class="collapsible" onclick = "expandDown(this)">
                 <span class="menu-item">
                     <img class="bun" src="source/bun2.png" alt="pumpkin spice">
                     <span class="info">
                         <br><br><span class="heading4">pumpkin spice</span><br><br>
-                        <span>$3.50</span>
+                        <span class="item-price">$3.50</span>
                         <br><br>
                         <span class="menu-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor nim ad minim veniam, quis nostrud exercitation ullamco laboris incididunt ut
@@ -262,20 +288,25 @@
                     </div>
                     <div class="glazing">
                         <span>Glaze Options</span><br>
-                        <!-- <hr class="line4"> -->
-                        <button
-                            class="drop-down">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+                        <div class="custom-select" style="width:150px;">
+                            <select>
+                              <option value="0">None</option>
+                              <option value="1">Sugar Milk</option>
+                              <option value="2">Vanilla</option>
+                              <option value="3">Chocolate</option>
+                            </select>
+                          </div>
                     </div>
-                    <a href="#" class="button1">Add to Basket</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="button1 button-basket">Add to Basket</a>
                 </div>
             </div>
             <hr class="line3">
-            <button class="collapsible">
+            <button class="collapsible" onclick = "expandDown(this)">
                 <span class="menu-item">
                     <img class="bun" src="source/bun3.png" alt="caramel pecan">
                     <span class="info">
                         <br><br><span class="heading4">caramel pecan</span><br><br>
-                        <span>$3.50</span>
+                        <span class="item-price">$3.50</span>
                         <br><br>
                         <span class="menu-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor nim ad minim veniam, quis nostrud exercitation ullamco laboris incididunt ut
@@ -310,11 +341,16 @@
                     </div>
                     <div class="glazing">
                         <span>Glaze Options</span><br>
-                        <!-- <hr class="line4"> -->
-                        <button
-                            class="drop-down">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</button>
+                        <div class="custom-select" style="width:150px;">
+                            <select>
+                              <option value="0">None</option>
+                              <option value="1">Sugar Milk</option>
+                              <option value="2">Vanilla</option>
+                              <option value="3">Chocolate</option>
+                            </select>
+                          </div>
                     </div>
-                    <a href="#" class="button1">Add to Basket</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="button1 button-basket">Add to Basket</a>
                 </div>
             </div>
             <hr class="line3">
@@ -327,8 +363,10 @@
                 <!-- <p class="footer-heading"><br><br><br>Sign up for our newsletter</p> -->
                 <img class="signup" src="source/signup.png" alt="Bunbun logo">
                 <p class="footer-body">Hear more about tasty treats and exciting discounts!</p><br>
-                <input type="text" id="subscription" name="subscription-form">
-                <a href="#"><img class="arrow" src="source/arrow.png" alt="arrow button"></a>
+                <div class="subscription-input">
+                    <input type="text" id="subscription-submit" name="submission-form">
+                    <a href="#"><img class = "arrow" src="source/arrow.png" alt="arrow button"></a>
+                </div>
             </div>
             <div class="footer-section-links">
                 <a href="#"><img class="icons" src="source/insta.png" alt="instagram icon"></a>
@@ -338,7 +376,7 @@
         </div>
 
         <!-- NOT my code! From w3 schools tutorial  -->
-        <script>
+        <!-- <script>
             var coll = document.getElementsByClassName("collapsible");
             var i;
 
@@ -353,9 +391,11 @@
                     }
                 });
             }
-        </script>
+        </script> -->
         <!-- From w3 schools tutorial  -->
     </div>
 </body>
+
+<script src="script.js"></script>
 
 </html>

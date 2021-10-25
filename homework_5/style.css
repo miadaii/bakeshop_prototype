@@ -48,13 +48,13 @@ header {
 }
 
 h1 {
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
 
-    width: 695px;
+    /* width: 695px;
     height: 149px;
     left: 850px;
-    top: 207px;
+    top: 207px; */
     z-index: 1;
 
     font-family: 'Fraunces', serif;
@@ -126,8 +126,10 @@ a:hover {
 }
 
 .header-container {
+    
     display: flex;
     flex-direction: column;
+    padding-right: 180px;
 
 }
 
@@ -226,8 +228,9 @@ a.button1:hover {
     left: 201px;
     top: 207px; */
     z-index: 1;
+    flex-basis: auto;
 
-    background: url(image.png);
+    /* background: url(image.png); */
 }
 
 .rectangle {
@@ -304,7 +307,9 @@ a.button1:hover {
 }
 
 .bottom-container {
-    padding: 10%;
+    /* padding: 10%; */
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .about {
@@ -387,15 +392,24 @@ a.button1:hover {
     margin-right: 500px;
 }
 
+#subscription-submit{
+    border: 1px solid #F4F1ED;
+    color: #F4F1ED;
+}
+
 input[type=text],
 select {
     /* width: 100%; */
-    background-color: #195CC8;
+    background-color: rgba(255, 255, 255, 0);
+    /* background-color: #195CC8; */
     display: inline-block;
-    border: 1px solid #F4F1ED;
+    border: 1px solid #195CC8;
     border-radius: 4px;
     box-sizing: border-box;
     padding: 12px 120px;
+    color: #195CC8;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .footer-body {
@@ -466,6 +480,14 @@ select {
 #grad4 {
     /* padding-top: -400px; */
     height: 1200px;
+    background-color: #ECDED2;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(#ECDED2, #F4F1ED);
+}
+
+#grad5 {
+    /* padding-top: -400px; */
+    height: 1800px;
     background-color: #ECDED2;
     /* For browsers that do not support gradients */
     background-image: linear-gradient(#ECDED2, #F4F1ED);
@@ -693,8 +715,14 @@ label span {
     text-align: left;
 }
 
+.custom-select{
+    /* background-color: rgba(255, 255, 255, 0);
+    border: 1.5px solid #195CC8; */
+}
+
 .drop-down2 {
-    display: flex;
+    /* display: flex; */
+
     background-color: rgba(255, 255, 255, 0);
     color: #195CC8;
     border-radius: 4px;
@@ -705,9 +733,10 @@ label span {
     padding: 10px;
     width: 200px;
     text-align: left;
-    margin-left: 1250px;
+    margin-right: 160px;
+    /* margin-left: 1250px;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
 }
 
 .tracking-input {
@@ -952,3 +981,144 @@ a.button5:hover {
 .progress-bar {
     width: 280px;
 }
+
+.home-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.menu-container-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.top-categ{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -15px;
+    padding-left: 10px;
+}
+
+.item-categ{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+
+    /* justify-content: space-evenly; */
+    /* padding-left: 10%; */
+}
+.product-label{
+    flex-grow: 5;
+    flex-basis: auto;
+    padding-left: 70px;
+}
+.quantity-label{
+    flex-grow: 2;
+}
+.total-label{
+    flex-grow: 2;
+}
+
+
+.bun-cart{
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    padding-left: 80px;
+    padding-right: 20px;
+    width: 20%;
+    flex-grow: 5;
+}
+
+.quant-cart{
+    padding-top: 30px;
+    flex-grow: 3;
+    /* padding-left: 230px; */
+    /* flex-basis: 29%; */
+}
+
+.price-cart{
+    padding-top: 30px;
+    flex-grow: 3;
+    padding-left: 30px;
+    
+}
+
+.title-display{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title{
+    color: #195CC8;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Fraunces', serif;
+    padding-bottom: 15px;
+    padding-top: 30px;
+}
+
+.title-cart{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-opt{
+    padding-top: 50px;
+}
+
+.center-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.edit-cart{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.remove-cart{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+    
+.price-breakdown{
+    padding-top: 40px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    padding-right: 70px;
+}
+
+.cat-pair{
+    display: flex;
+    flex-direction: column;
+
+    padding-right: 280px;
+    padding-bottom: 200px;
+    
+
+}
+
+.carousel{
+    background-color: #E0DDD4;
+}
+
+.button5-container{
+display: flex;
+justify-content: flex-end;
+}
+
+.button5{
+    display: flex;
+    margin-bottom: 100px;

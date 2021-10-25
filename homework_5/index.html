@@ -5,12 +5,9 @@
     <meta charset="utf-8">
     <title>Bun Bun Bakeshop </title>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-    <script src="jqRotate.js"></script>
     <link rel="stylesheet" href="style.css">
 
-    <script src="func.js">
+    <script src="script.js">
     </script>
 
 
@@ -23,20 +20,23 @@
             <ul class = "nav-links">
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="track_order.html">Track Orders</a></li>
-                <li><a href="purchase.html"> <img class = "basket" src="source/basket.png" alt="basket icon"></a></li>
+                <li><a href="cart.html"> <img class = "basket" src="source/basket.png" alt="basket icon"></a></li>
+                <span id="result"> </span>
+
             </ul>
         </nav>
 
     </header>
     <div>
-        <img class = "home-image" src="source/header.png" alt="Homepage Image">
-        <div class = "header-container">
-            <h1>Fall means <br>
-                new flavors
-                <br>
-                <a href="menu.html" class="button2">Order Now</a>  
-
-            </h1>
+        <div class = "home-container">       
+            <img class = "home-image" src="source/header.png" alt="Homepage Image">
+            <div class = "header-container">
+                <h1>Fall means <br>
+                    new flavors
+                    <br>
+                    <a href="menu.html" class="button2">Order Now</a>  
+                </h1>
+            </div>
         </div>
         
         <br>
@@ -84,8 +84,10 @@
             <!-- <p class="footer-heading"><br><br><br>Sign up for our newsletter</p> -->
             <img class = "signup" src="source/signup.png" alt="Bunbun logo">
             <p class="footer-body">Hear more about tasty treats and exciting discounts!</p><br>
-            <input type="text" id="subscription" name="subscription-form">
-            <a href="#"><img class = "arrow" src="source/arrow.png" alt="arrow button"></a>
+            <div class="subscription-input">
+                <input type="text" id="subscription-submit" name="submission-form">
+                <a href="#"><img class = "arrow" src="source/arrow.png" alt="arrow button"></a>
+            </div>
         </div>
         <div class="footer-section-links">
             <a href="#"><img class = "icons" src="source/insta.png" alt="instagram icon"></a>
